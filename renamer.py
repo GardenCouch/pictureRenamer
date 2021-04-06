@@ -14,18 +14,15 @@ def main():
 
     dir = path
     for count, filename in enumerate(os.listdir(dir)):
+        print("----------------------------------------")
         print(os.path.abspath(filename)) # this prints the file path. I can ad the filepath in the dat extractor to turn it into a Image file
+        print("----------------------------------------")
 
-
-        dst = os.path.join(dir, f"356E{count}.jpg")
+        dst = os.path.join(dir, f"3564dE{count}.jpg")
         src = os.path.join(dir, filename)
 
         os.rename(src, dst)
  
-
-  
-
-
 # Driver Code
 if __name__ == '__main__':
       
