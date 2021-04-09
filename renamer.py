@@ -4,7 +4,7 @@
 # importing os module
 import os
 from exif import Image
-
+from Working_date_extractor import date_extractor
 # Function to rename multiple files
 
 
@@ -18,11 +18,12 @@ def main():
         print(os.path.abspath(filename)) # this prints the file path. I can ad the filepath in the dat extractor to turn it into a Image file
         print("----------------------------------------")
 
-        dst = os.path.join(dir, f"3564dE{count}.jpg")
+        dst = os.path.join(dir, f"356k4dE{count}.jpg")
         src = os.path.join(dir, filename)
 
         os.rename(src, dst)
- 
+        
+
 # Driver Code
 if __name__ == '__main__':
       
