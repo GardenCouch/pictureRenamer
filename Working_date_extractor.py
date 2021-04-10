@@ -18,12 +18,15 @@ def exif_data_extractor(filepath):
         for k, v in img._getexif().items()
         if k in PIL.ExifTags.TAGS
     }
+
     datetimeoriginal = exif['DateTimeOriginal']
     #gps = exif['GPSInfo']
+   
     return datetimeoriginal
     
 #create empty dictionairy to store the data 
 picture_data_dict = {'filename': [] , "date":[]}
+
 
 for filename in os.listdir(dir):
     #join source and filename in to push in the exif data exstraction
