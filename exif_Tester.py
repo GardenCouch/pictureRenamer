@@ -10,20 +10,17 @@ filename = "35g6k4ldE33.jpg"
 
 file_path_test = os.path.join(dir + "\\" + filename)
 
+#function that test if there is an exif file or not. the function returns a variable has_exif that is either true or false. 
+# the input is the file path
 def exif_tester(file_path):
     img = Image.open(file_path)
     img_exif = img.getexif()
-    print(type(img_exif))
-    # <class 'PIL.Image.Exif'>
 
     if img_exif == {} :
-        print('Sorry, image has no exif data.')
         has_exif = False
     else:
-        print("there is a exif file")
         has_exif = True
 
     return has_exif
 
-b = exif_tester(file_path_test)
-print(b)
+
