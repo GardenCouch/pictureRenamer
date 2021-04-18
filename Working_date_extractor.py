@@ -25,7 +25,8 @@ def exif_data_extractor(filepath):
 def picture_data_generator(directory_path):
     dir= directory_path
     #create empty dictionairy to store the data 
-    picture_data_dict = {'filename': [] , "date":[]}
+    filenames = []
+    dates = []
 
     for filename in os.listdir(dir):
         #join source and filename in to push in the exif data exstraction
@@ -38,14 +39,26 @@ def picture_data_generator(directory_path):
         if exif_state == True:    
             date = exif_data_extractor(src)
             #ad data to empty library
-            picture_data_dict['filename'].append(filename)
-            picture_data_dict['date'].append(date)
+            filenames.append(filename)
+            dates.append(date)
         else:
             print(filename + ": " + "has no exif!")
 
-    return picture_data_dict
+    return filenames, dates
 
 data = picture_data_generator(path)
+
+# for loop to extract the data from the data generated in the picture data generator
+counter = 0
+for d in data[0]:
+    naming_data = [i[counter] for i in data]
+    naming_data = naming_data[0] + naming_data[1]
+    counter = counter +1
+    print(naming_data)
+
+
+    
+
 
 
 
